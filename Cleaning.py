@@ -69,6 +69,17 @@ data['MntFishProducts'] = data['MntFishProducts'].astype('int')
 data['MntSweetProducts'] = data['MntSweetProducts'].astype('int')
 data['MntGoldProds'] = data['MntGoldProds'].astype('int')
 
+data.to_csv('Cleaned_data.csv')
+
+
+
+
+
+
+
+
+
+
 
 
 
