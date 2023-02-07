@@ -15,7 +15,7 @@ pd.set_option('display.width', None)
 
 df = pd.read_csv('Cleaned_data.csv')
 df = df.drop('Unnamed: 0', axis=1)
-dummy_vars = pd.get_dummies(df['Marital_Status'])
+dummy_vars = pd.get_dummies(df.drop('Education',axis=1))
 dummy_vars = dummy_vars[['Divorced', 'Married', 'Single', 'Together', 'Widow']]
 #df_new = pd.concat([df,dummy_vars],axis=0)
 #df.drop('Marital_Status', axis=1, inplace= True)
@@ -26,7 +26,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 
-X = df.drop(['Marital_Status','Education'],axis=1)
+X = dummy_vars
 y = df['Education']
 
 X_train,X_test,Y_train,Y_test = train_test_split(X,y,test_size=0.3,random_state=1)
@@ -51,6 +51,14 @@ knn_gscv.best_params_  #9
 knn_final = KNeighborsClassifier(n_neighbors=knn_gscv.best_params_['n_neighbors'])
 knn_final.fit(X,y)
 knn_final.score(X,y)  #61%
+
+## Random Forest
+from sklearn.ensemble import RandomForestClassifier
+
+model2 = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=1)
+model2.fit(X_train,Y_train)
+model2.score(X_test,Y_test)
+predictions = model2.predict(X_test)
 
 
 

@@ -10,4 +10,4 @@ A K-Nearest Neighbors model with 61% accuracy (5-fold cross validation), and a L
 ## Conclusion
 I took a look at the data, asked a question and tried to answer it. During the process, I had doubts and wondered if I had maybe asked a wrong or a stupid question. I wondered if it is possible to have a good accuracy in predicting someone's education level based on just the data given in the dataset. 
 
-But in the end, I decided that the best way to find out would be by trying. And it turns out, you **can** be atleast 11% more accurate by using ML than you can be by just guessing.
+But in the end, I decided that the best way to find out would be by trying. And it turns out, you **can** be atleast 11% more accurate by using ML than you can be by just guessing. I'll be updating this further as i learn more.

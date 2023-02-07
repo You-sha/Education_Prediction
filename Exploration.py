@@ -55,6 +55,7 @@ sns.scatterplot(x='MntFishProducts', y='Income',
 
 sns.pairplot(df, hue='Education')
 sns.heatmap(df_corr, annot=True)
+plt.savefig('heat.png', dpi=600)
 
 
 
