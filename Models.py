@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
 import seaborn as sns
+
 plt.style.use('ggplot')
 pd.set_option('display.max_columns', 10)
 pd.set_option('display.width', None)
@@ -57,7 +58,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 model2 = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=1)
 model2.fit(X_train,Y_train)
-model2.score(X_test,Y_test)
+model2.score(X_test,Y_test)  #64%
 predictions = model2.predict(X_test)
 
 
